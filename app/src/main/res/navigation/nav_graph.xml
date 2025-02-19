@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/inicioFragment">
+
+    <fragment
+        android:id="@+id/inicioFragment"
+        android:name="dam.moviles.ejercicio2_repaso.vista.InicioFragment"
+        android:label="fragment_inicio"
+        tools:layout="@layout/fragment_inicio" >
+        <action
+            android:id="@+id/action_inicioFragment_to_lugaresFragment"
+            app:destination="@id/lugaresFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/lugaresFragment"
+        android:name="dam.moviles.ejercicio2_repaso.vista.LugaresFragment"
+        android:label="fragment_lugares"
+        tools:layout="@layout/fragment_lugares" >
+        <action
+            android:id="@+id/action_lugaresFragment_to_tiempoFragment"
+            app:destination="@id/tiempoFragment" />
+        <argument
+            android:name="lugar"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/tiempoFragment"
+        android:name="dam.moviles.ejercicio2_repaso.vista.TiempoFragment"
+        android:label="fragment_tiempo"
+        tools:layout="@layout/fragment_tiempo" >
+        <argument
+            android:name="ubicacionSeleccionada"
+            app:argType="dam.moviles.ejercicio2_repaso.modelo.Ubicacion" />
+    </fragment>
+</navigation>
